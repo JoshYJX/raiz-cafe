@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { registrarEvento } from '../analytics'
 
 const VALORES_INICIALES = { nombre: '', correo: '', mensaje: '' }
 
@@ -41,6 +42,9 @@ export default function Contacto() {
     setErrores(erroresEncontrados)
 
     if (Object.keys(erroresEncontrados).length === 0) {
+      // ✅ Evento personalizado en GA4
+      registrarEvento('Formulario', 'envio_contacto', 'Contacto - Raíz Café')
+      
       setEnviado(true)
     }
   }

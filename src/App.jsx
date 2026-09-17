@@ -1,4 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { registrarVistaDePagina } from './analytics'
 import NavBar from './components/NavBar'
 import SiteFooter from './components/SiteFooter'
 import Inicio from './pages/Inicio'
@@ -8,6 +10,13 @@ import Nosotros from './pages/Nosotros'
 import Contacto from './pages/Contacto'
 
 export default function App() {
+  const location = useLocation()
+
+  // Cada vez que cambia la ruta, enviamos un page_view a GA4
+  useEffect(() => {
+    registrarVistaDePagina(location.pathname + location.search, document.title)
+  }, [location])
+
   return (
     <div className="app">
       <NavBar />
