@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { PRODUCTOS, BENEFICIOS } from '../datos'
 import TarjetaProducto from '../components/TarjetaProducto'
 import Beneficio from '../components/Beneficio'
@@ -8,6 +9,15 @@ export default function Inicio() {
 
   return (
     <>
+      <Helmet>
+        <title>Raíz · Café de especialidad de Guatemala</title>
+        <meta
+          name="description"
+          content="Café de especialidad tostado por manos locales. Granos de Huehuetenango, Antigua y Cobán, entregados en menos de diez días desde el tueste."
+        />
+        <link rel="canonical" href="https://raiz-cafe-two.vercel.app/" />
+      </Helmet>
+
       <section className="hero">
         <div className="contenedor hero__grid">
           <div>
@@ -29,9 +39,13 @@ export default function Inicio() {
           </div>
           <div className="hero__visual">
             <img
-              src="https://images.pexels.com/photos/18139081/pexels-photo-18139081.jpeg?auto=compress&cs=tinysrgb&w=900"
+              src="/hero-cafe.jpg"
               alt="Taza de café humeante recién preparada"
-              loading="lazy"
+              loading="eager"
+              fetchpriority="high"
+              width="900"
+              height="900"
+              decoding="async"
             />
           </div>
         </div>

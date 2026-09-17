@@ -1,10 +1,62 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+
+    <!-- Título y descripción principales -->
+    <title>Raíz · Café de especialidad de Guatemala</title>
+    <meta
+      name="description"
+      content="Café de especialidad tostado por manos locales en Guatemala. Granos de Huehuetenango, Antigua y Cobán, entregados en menos de diez días desde el tueste."
+    />
+    <meta name="author" content="Raíz Café de Origen" />
+    <meta name="theme-color" content="#3b2417" />
+
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raíz Café de Origen" />
+    <meta property="og:title" content="Raíz · Café de especialidad de Guatemala" />
+    <meta
+      property="og:description"
+      content="Café de especialidad tostado por manos locales. Granos de Huehuetenango, Antigua y Cobán."
+    />
+    <meta property="og:url" content="https://raiz-cafe-two.vercel.app/" />
+    <meta property="og:image" content="https://raiz-cafe-two.vercel.app/og-image.jpg" />
+    <meta property="og:locale" content="es_GT" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Raíz · Café de especialidad de Guatemala" />
+    <meta
+      name="twitter:description"
+      content="Café de especialidad tostado por manos locales en Guatemala."
+    />
+    <meta name="twitter:image" content="https://raiz-cafe-two.vercel.app/og-image.jpg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://raiz-cafe-two.vercel.app/" />
+
+    <!-- Datos estructurados: LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Raíz Café de Origen",
+        "description": "Café de especialidad tostado por manos locales en Guatemala.",
+        "url": "https://raiz-cafe-two.vercel.app/",
+        "image": "https://raiz-cafe-two.vercel.app/og-image.jpg",
+        "email": "cafe@raiz.gt",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "GT",
+          "addressRegion": "Guatemala"
+        },
+        "priceRange": "Q",
+        "servesCuisine": "Café de especialidad"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { PRODUCTOS, CATEGORIAS } from '../datos'
 import TarjetaProducto from '../components/TarjetaProducto'
 
@@ -11,43 +12,54 @@ export default function Productos() {
       : PRODUCTOS.filter((p) => p.categoria === categoriaActiva)
 
   return (
-    <section className="seccion">
-      <div className="contenedor">
-        <p className="eyebrow">Catálogo</p>
-        <h1>Nuestros productos</h1>
-        <p>
-          Todo el café se tuesta en lotes pequeños. Filtra por tipo para
-          encontrar justo lo que necesitas.
-        </p>
+    <>
+      <Helmet>
+        <title>Catálogo de cafés · Raíz Café de Origen</title>
+        <meta
+          name="description"
+          content="Explora nuestro catálogo de cafés de especialidad: Huehuetenango, Antigua y Cobán. Notas de cata, altitud y proceso de cada grano."
+        />
+        <link rel="canonical" href="https://raiz-cafe-two.vercel.app/productos" />
+      </Helmet>
 
-        <div className="filtro" role="group" aria-label="Filtrar por categoría">
-          {CATEGORIAS.map((categoria) => (
-            <button
-              key={categoria}
-              type="button"
-              onClick={() => setCategoriaActiva(categoria)}
-              className={
-                categoria === categoriaActiva
-                  ? 'filtro__boton filtro__boton--activo'
-                  : 'filtro__boton'
-              }
-              aria-pressed={categoria === categoriaActiva}
-            >
-              {categoria}
-            </button>
-          ))}
-        </div>
+      <section className="seccion">
+        <div className="contenedor">
+          <p className="eyebrow">Catálogo</p>
+          <h1>Nuestros productos</h1>
+          <p>
+            Todo el café se tuesta en lotes pequeños. Filtra por tipo para
+            encontrar justo lo que necesitas.
+          </p>
 
-        {productosFiltrados.length === 0 ? (
-          <p style={{ marginTop: '32px' }}>No hay productos en esta categoría todavía.</p>
-        ) : (
-          <div className="grid-productos">
-            {productosFiltrados.map((producto) => (
-              <TarjetaProducto key={producto.id} producto={producto} />
+          <div className="filtro" role="group" aria-label="Filtrar por categoría">
+            {CATEGORIAS.map((categoria) => (
+              <button
+                key={categoria}
+                type="button"
+                onClick={() => setCategoriaActiva(categoria)}
+                className={
+                  categoria === categoriaActiva
+                    ? 'filtro__boton filtro__boton--activo'
+                    : 'filtro__boton'
+                }
+                aria-pressed={categoria === categoriaActiva}
+              >
+                {categoria}
+              </button>
             ))}
           </div>
-        )}
-      </div>
-    </section>
+
+          {productosFiltrados.length === 0 ? (
+            <p style={{ marginTop: '32px' }}>No hay productos en esta categoría todavía.</p>
+          ) : (
+            <div className="grid-productos">
+              {productosFiltrados.map((producto) => (
+                <TarjetaProducto key={producto.id} producto={producto} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   )
 }

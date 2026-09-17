@@ -1,9 +1,19 @@
+import { Helmet } from 'react-helmet-async'
 import { EQUIPO } from '../datos'
 import MiembroEquipo from '../components/MiembroEquipo'
 
 export default function Nosotros() {
   return (
     <>
+      <Helmet>
+        <title>Nuestra historia · Raíz Café de Origen</title>
+        <meta
+          name="description"
+          content="Conoce a las familias productoras detrás de Raíz. Trabajamos directo con fincas de Huehuetenango, Antigua y Cobán desde hace más de una década."
+        />
+        <link rel="canonical" href="https://raiz-cafe-two.vercel.app/nosotros" />
+      </Helmet>
+
       <section className="seccion">
         <div className="contenedor">
           <p className="eyebrow">Nuestra historia</p>

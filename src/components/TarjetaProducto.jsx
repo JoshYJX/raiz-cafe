@@ -7,9 +7,9 @@ export default function TarjetaProducto({ producto }) {
         <img
           className="tarjeta-producto__imagen"
           src={producto.imagen}
-          alt={producto.nombre}
+          alt={`Taza de café ${producto.nombre} de Raíz Café de Origen`}
           loading="lazy"
-        />
+/>
       </div>
       <div className="tarjeta-producto__cuerpo">
         <span className="tarjeta-producto__categoria">{producto.categoria}</span>

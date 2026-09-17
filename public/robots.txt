@@ -1,0 +1,11 @@
+# robots.txt para Raíz Café de Origen
+# https://raiz-cafe-two.vercel.app
+
+User-agent: *
+Allow: /
+
+# Bloqueamos rutas que no aportan
+Disallow: /api/
+
+# Sitemap oficial
+Sitemap: https://raiz-cafe-two.vercel.app/sitemap.xml
