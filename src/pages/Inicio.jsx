@@ -85,14 +85,14 @@ export default function Inicio() {
 
       {/* SECCIÓN FORMULARIO DE MUESTRAS (Requisito Opción A) */}
       <section id="solicitar-muestra" className="seccion" style={{ background: '#efe9dd', padding: '3rem 1rem' }}>
-        <div className="contenedor">
+        <div className="contenedor" style={{ textAlign: 'center' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
             Prueba Raíz en tu Establecimiento
           </h2>
-          <p style={{ textAlign: 'center', color: '#665e5a', marginBottom: '2rem' }}>
-            Enviamos una muestra tostada de 250g sin costo para tu cafetería o restaurante.
-          </p>
-          <FormularioMuestra />
+        <p style={{ textAlign: 'center', color: '#665e5a', marginBottom: '2rem', display: 'block', width: '100%' }}>
+          Enviamos una muestra tostada de 250g sin costo para tu cafetería o restaurante.
+        </p>
+        <FormularioMuestra />
         </div>
       </section>
     </>
