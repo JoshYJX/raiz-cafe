@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async'
 import { PRODUCTOS, BENEFICIOS } from '../datos'
 import TarjetaProducto from '../components/TarjetaProducto'
 import Beneficio from '../components/Beneficio'
+import { SeccionAPI } from '../components/SeccionAPI'
+import FormularioMuestra from '../components/FormularioMuestra'
 
 export default function Inicio() {
   const destacados = PRODUCTOS.filter((p) => p.destacado)
@@ -29,9 +31,10 @@ export default function Inicio() {
               su cosecha a tu taza en menos de diez días desde el tueste.
             </p>
             <div className="hero__acciones">
-              <Link to="/productos" className="boton boton--primario">
-                Ver productos
-              </Link>
+              {/* Botón CTA apuntando directamente al formulario de muestras */}
+              <a href="#solicitar-muestra" className="boton boton--primario">
+                Solicitar muestra gratis
+              </a>
               <Link to="/nosotros" className="boton boton--fantasma">
                 Conocer la historia
               </Link>
@@ -62,6 +65,13 @@ export default function Inicio() {
         </div>
       </section>
 
+      {/* SECCIÓN API: Monitoreo meteorológico */}
+      <section className="seccion">
+        <div className="contenedor">
+          <SeccionAPI />
+        </div>
+      </section>
+
       <section className="seccion seccion--tinta">
         <div className="contenedor">
           <h2>Destacados de la semana</h2>
@@ -70,6 +80,19 @@ export default function Inicio() {
               <TarjetaProducto key={producto.id} producto={producto} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN FORMULARIO DE MUESTRAS (Requisito Opción A) */}
+      <section id="solicitar-muestra" className="seccion" style={{ background: '#efe9dd', padding: '3rem 1rem' }}>
+        <div className="contenedor">
+          <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
+            Prueba Raíz en tu Establecimiento
+          </h2>
+          <p style={{ textAlign: 'center', color: '#665e5a', marginBottom: '2rem' }}>
+            Enviamos una muestra tostada de 250g sin costo para tu cafetería o restaurante.
+          </p>
+          <FormularioMuestra />
         </div>
       </section>
     </>
